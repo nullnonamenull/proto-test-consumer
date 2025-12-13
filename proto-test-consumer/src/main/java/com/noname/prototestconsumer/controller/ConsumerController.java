@@ -1,6 +1,7 @@
 package com.noname.prototestconsumer.controller;
 
-import com.noname.proto.Important;
+
+import com.noname.proto.important.v1.ImportantProto;
 import com.noname.prototestconsumer.dto.ImportantDTO;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,7 @@ public class ConsumerController {
                 .uri("/test")
                 .accept(MediaType.parseMediaType("application/x-protobuf"))
                 .retrieve()
-                .body(Important.ImportantDTO.class);
+                .body(ImportantProto.ImportantDTO.class);
 
         return ResponseEntity.ok(new ImportantDTO(
                 Objects.requireNonNull(res).getA(),

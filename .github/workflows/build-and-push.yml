@@ -2,7 +2,7 @@ name: Build & push proto-test-consumer
 
 on:
   push:
-    branches: [ master ]
+    tags: [ "v*" ]
 
 permissions:
   contents: read
